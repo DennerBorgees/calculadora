@@ -13,21 +13,28 @@ class Calculadora extends Controller
 
     public function calcular(Request $request)
     {
+        if($request->operador != "+" || $request->operador != "-" || $request->operador != "*" || $request->operador != "/")
+        {
+            $result = "Operador Invalido";
+        }
+
         if($request->operador == '+') {
-            $result = $request->nro1 + $request->nro2;
+            $result = $request->num1 + $request->num2;
         }
 
         if($request->operador == '-')
         {
-            $result = $request->nro1 - $request->nro2;
+            $result = $request->num1 - $request->num2;
         }
+
         if($request->operador == '*')
         {
-            $result = $request->nro1 * $request->nro2;
+            $result = $request->num1 * $request->num2;
         }
+
         if($request->operador == '/')
         {
-            $result = $request->nro1 / $request->nro2;
+            $result = $request->num1 / $request->num2;
         }
 
         return view('calcular', compact('result'));

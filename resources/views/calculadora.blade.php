@@ -10,9 +10,9 @@
 <body>
    <form action="/calcular" method="post">
        @csrf
-       <input type="number" name="nro1" placeholder="Número 1">
+       <input type="number" name="num1" placeholder="Número 1">
        <input name="operador" placeholder="Operador">
-       <input type="number" name="nro2" placeholder="Número 2">
+       <input type="number" name="num2" placeholder="Número 2">
        <button type="submit">Calcular</button>
    </form>
 </body>
